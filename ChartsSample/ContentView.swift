@@ -6,16 +6,64 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ContentView: View {
+    @State private var selectedTab = 0
+    @StateObject private var viewModel = BarChartViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        GeometryReader { geometry in
+            VStack {
+                Text("学習記録")
+//                    .centerHorizontally()
+                Picker("Options", selection: $selectedTab) {
+                    Text("日").tag(0)
+//                    Text("週").tag(1)
+//                    Text("月").tag(2)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: geometry.size.width, height: 32, alignment: .center)
+                .padding()
+
+                // 選択されたタブに応じたコンテンツを表示
+                if selectedTab == 0 {
+                    Chart {
+                        ForEach(viewModel.studyData) { dataItem in
+                            BarMark(
+                                x: .value("日付", dataItem.date, unit: .day),
+                                y: .value("勉強時間", dataItem.studyTime),
+                                width: 20 // 棒グラフの幅
+                            )
+                            .foregroundStyle(dataItem.date.gradientForDayOfWeek())
+                        }
+                    }
+                    .chartXAxis {
+                        AxisMarks(position: .bottom, values: .stride(by: .day)) { _ in
+                            AxisGridLine(centered: nil, stroke: .init(StrokeStyle(lineWidth: 0)))
+                            AxisValueLabel(format: .dateTime.weekday(.abbreviated))
+                        }
+                    }
+                    .chartYAxis {
+                        AxisMarks(values: .automatic(desiredCount: 5)) { _ in
+                            AxisGridLine()
+                            AxisValueLabel()
+                        }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 300) //TODO: FIX
+                } 
+//                else if selectedTab == 1
+//                {
+//                    Text("週のデータ")
+//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                }
+//                else
+//                {
+//                    Text("月のデータ")
+//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                }
+            }
         }
-        .padding()
     }
 }
 

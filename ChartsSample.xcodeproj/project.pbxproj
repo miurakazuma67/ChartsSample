@@ -14,6 +14,9 @@
 		9C4FCE1A2BCEAD7A005EE131 /* ChartsSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FCE192BCEAD7A005EE131 /* ChartsSampleTests.swift */; };
 		9C4FCE242BCEAD7A005EE131 /* ChartsSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FCE232BCEAD7A005EE131 /* ChartsSampleUITests.swift */; };
 		9C4FCE262BCEAD7A005EE131 /* ChartsSampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FCE252BCEAD7A005EE131 /* ChartsSampleUITestsLaunchTests.swift */; };
+		9C4FCE332BCEAEB2005EE131 /* BarChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FCE322BCEAEB2005EE131 /* BarChartViewModel.swift */; };
+		9C4FCE352BCEAEE5005EE131 /* StudyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FCE342BCEAEE5005EE131 /* StudyData.swift */; };
+		9C4FCE372BCEB1F1005EE131 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FCE362BCEB1F1005EE131 /* DateUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		9C4FCE1F2BCEAD7A005EE131 /* ChartsSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChartsSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4FCE232BCEAD7A005EE131 /* ChartsSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsSampleUITests.swift; sourceTree = "<group>"; };
 		9C4FCE252BCEAD7A005EE131 /* ChartsSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9C4FCE322BCEAEB2005EE131 /* BarChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewModel.swift; sourceTree = "<group>"; };
+		9C4FCE342BCEAEE5005EE131 /* StudyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyData.swift; sourceTree = "<group>"; };
+		9C4FCE362BCEB1F1005EE131 /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,12 @@
 			children = (
 				9C4FCE072BCEAD79005EE131 /* ChartsSampleApp.swift */,
 				9C4FCE092BCEAD79005EE131 /* ContentView.swift */,
+				9C4FCE322BCEAEB2005EE131 /* BarChartViewModel.swift */,
+				9C4FCE342BCEAEE5005EE131 /* StudyData.swift */,
 				9C4FCE0B2BCEAD7A005EE131 /* Assets.xcassets */,
 				9C4FCE0D2BCEAD7A005EE131 /* ChartsSample.entitlements */,
 				9C4FCE0E2BCEAD7A005EE131 /* Preview Content */,
+				9C4FCE362BCEB1F1005EE131 /* DateUtility.swift */,
 			);
 			path = ChartsSample;
 			sourceTree = "<group>";
@@ -259,6 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4FCE372BCEB1F1005EE131 /* DateUtility.swift in Sources */,
+				9C4FCE332BCEAEB2005EE131 /* BarChartViewModel.swift in Sources */,
+				9C4FCE352BCEAEE5005EE131 /* StudyData.swift in Sources */,
 				9C4FCE0A2BCEAD79005EE131 /* ContentView.swift in Sources */,
 				9C4FCE082BCEAD79005EE131 /* ChartsSampleApp.swift in Sources */,
 			);

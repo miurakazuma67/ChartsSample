@@ -17,6 +17,7 @@
 		9C4FCE332BCEAEB2005EE131 /* BarChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FCE322BCEAEB2005EE131 /* BarChartViewModel.swift */; };
 		9C4FCE352BCEAEE5005EE131 /* StudyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FCE342BCEAEE5005EE131 /* StudyData.swift */; };
 		9C4FCE372BCEB1F1005EE131 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FCE362BCEB1F1005EE131 /* DateUtility.swift */; };
+		9C5F4C812BD08D4C00634182 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F4C802BD08D4C00634182 /* ColorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9C4FCE322BCEAEB2005EE131 /* BarChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewModel.swift; sourceTree = "<group>"; };
 		9C4FCE342BCEAEE5005EE131 /* StudyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyData.swift; sourceTree = "<group>"; };
 		9C4FCE362BCEB1F1005EE131 /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
+		9C5F4C802BD08D4C00634182 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				9C4FCE0D2BCEAD7A005EE131 /* ChartsSample.entitlements */,
 				9C4FCE0E2BCEAD7A005EE131 /* Preview Content */,
 				9C4FCE362BCEB1F1005EE131 /* DateUtility.swift */,
+				9C5F4C802BD08D4C00634182 /* ColorManager.swift */,
 			);
 			path = ChartsSample;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				9C4FCE372BCEB1F1005EE131 /* DateUtility.swift in Sources */,
 				9C4FCE332BCEAEB2005EE131 /* BarChartViewModel.swift in Sources */,
 				9C4FCE352BCEAEE5005EE131 /* StudyData.swift in Sources */,
+				9C5F4C812BD08D4C00634182 /* ColorManager.swift in Sources */,
 				9C4FCE0A2BCEAD79005EE131 /* ContentView.swift in Sources */,
 				9C4FCE082BCEAD79005EE131 /* ChartsSampleApp.swift in Sources */,
 			);

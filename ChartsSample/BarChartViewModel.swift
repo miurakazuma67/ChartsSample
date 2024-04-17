@@ -16,7 +16,7 @@ class BarChartViewModel: ObservableObject {
     @Published var studyData: [StudyData] = []
 
     init() {
-        generateOneMonthDummyData()
+        generateOneDayDummyData()
     }
 
     // 30日分ランダム生成
@@ -49,16 +49,16 @@ class BarChartViewModel: ObservableObject {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
 
-        // 今日から30日前までの日付を生成
         let calendar = Calendar.current
         var stubStudyData = [StudyData]()
         for i in 0..<30 {
-            if let date = calendar.date(byAdding: .day, value: -i, to: Date()) {
+            if let date = calendar.date(byAdding: .day, value: 1, to: Date()) {
                 let studyTime = Double.random(in: 0.5...5.0)
                 let category = categories.randomElement()!
                 stubStudyData.append(StudyData(date: date, studyTime: studyTime, category: category))
             }
         }
         self.studyData = stubStudyData
+        print(self.studyData)
     }
 }

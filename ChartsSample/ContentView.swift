@@ -35,7 +35,7 @@ struct ContentView: View {
                                 y: .value("勉強時間", dataItem.studyTime),
                                 width: 20 // 棒グラフの幅
                             )
-                            .foregroundStyle(dataItem.date.gradientForDayOfWeek())
+                            .foregroundStyle(dataItem.color)
                         }
                     }
                     .chartXAxis {

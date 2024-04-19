@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+
 struct ChartsSampleApp: App {
     var body: some Scene {
         WindowGroup {

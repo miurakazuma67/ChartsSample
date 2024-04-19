@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // グラフで使うデータ
 struct StudyData: Identifiable {
@@ -13,8 +14,9 @@ struct StudyData: Identifiable {
     var date: Date // 日付
     var studyTime: Double // 学習時間
     var category: String // 教材のカテゴリ
+    var color: Color // Colorプロパティを追加
 }
 
 // 管理方法
 // dateごとに合計の学習時間を計算し、グラフに描画する
-// categoryごとに棒グラフの色を変更する
+// categoryごとに棒グラフの色を変更する → ok

@@ -14,6 +14,7 @@ import Foundation
 
 class BarChartViewModel: ObservableObject {
     @Published var studyData: [StudyData] = []
+    private var colorManager = ColorManager() // ColorManagerのインスタンスを追加
 
     init() {
         generateOneDayDummyData()
@@ -34,7 +35,8 @@ class BarChartViewModel: ObservableObject {
             if let date = calendar.date(byAdding: .day, value: -i, to: Date()) {
                 let studyTime = Double.random(in: 0.5...5.0)
                 let category = categories.randomElement()!
-                stubStudyData.append(StudyData(date: date, studyTime: studyTime, category: category))
+                let color = colorManager.createColor(for: category) // カテゴリに色を割り当て
+                stubStudyData.append(StudyData(date: date, studyTime: studyTime, category: category, color: color))
             }
         }
         self.studyData = stubStudyData
@@ -51,11 +53,12 @@ class BarChartViewModel: ObservableObject {
 
         let calendar = Calendar.current
         var stubStudyData = [StudyData]()
-        for i in 0..<30 {
+        for _ in 0..<30 {
             if let date = calendar.date(byAdding: .day, value: 1, to: Date()) {
                 let studyTime = Double.random(in: 0.5...5.0)
                 let category = categories.randomElement()!
-                stubStudyData.append(StudyData(date: date, studyTime: studyTime, category: category))
+                let color = colorManager.createColor(for: category) // カテゴリに色を割り当て
+                stubStudyData.append(StudyData(date: date, studyTime: studyTime, category: category, color: color))
             }
         }
         self.studyData = stubStudyData

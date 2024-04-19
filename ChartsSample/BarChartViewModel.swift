@@ -50,18 +50,28 @@ class BarChartViewModel: ObservableObject {
         // DateFormatterの設定
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
+        
+        let date = Date()  // 1日分のデータだけなので、今日の日付を使用
 
-        let calendar = Calendar.current
-        var stubStudyData = [StudyData]()
+        var categoryTotals = [String: Double]()  // カテゴリごとの合計時間を保持する辞書
+
         for _ in 0..<30 {
-            if let date = calendar.date(byAdding: .day, value: 1, to: Date()) {
-                let studyTime = Double.random(in: 0.5...5.0)
-                let category = categories.randomElement()!
-                let color = colorManager.createColor(for: category) // カテゴリに色を割り当て
-                stubStudyData.append(StudyData(date: date, studyTime: studyTime, category: category, color: color))
+            let studyTime = Double.random(in: 0.5...5.0)
+            if let category = categories.randomElement() {
+                if let existingTime = categoryTotals[category] {
+                    categoryTotals[category] = existingTime + studyTime
+                } else {
+                    categoryTotals[category] = studyTime
+                }
             }
         }
+
+        var stubStudyData = [StudyData]()
+        for (category, totalStudyTime) in categoryTotals {
+            let color = colorManager.createColor(for: category)  // カテゴリに色を割り当て
+            stubStudyData.append(StudyData(date: date, studyTime: totalStudyTime, category: category, color: color))
+        }
+
         self.studyData = stubStudyData
-        print(self.studyData)
     }
 }

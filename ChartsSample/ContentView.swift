@@ -9,6 +9,7 @@ import SwiftUI
 import Charts
 
 struct ContentView: View {
+    @State private var scale: CGFloat = 0.0
     @State private var selectedTab = 0
     @StateObject private var viewModel = BarChartViewModel()
 
@@ -37,6 +38,7 @@ struct ContentView: View {
                             )
                             .foregroundStyle(dataItem.color)
                         }
+                        
                     }
                     .chartXAxis {
                         AxisMarks(position: .bottom, values: .stride(by: .day)) { _ in
@@ -51,17 +53,7 @@ struct ContentView: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: 300) //TODO: FIX
-                } 
-//                else if selectedTab == 1
-//                {
-//                    Text("週のデータ")
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                }
-//                else
-//                {
-//                    Text("月のデータ")
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                }
+                }
             }
         }
     }

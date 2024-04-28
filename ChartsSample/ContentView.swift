@@ -38,7 +38,6 @@ struct ContentView: View {
                             )
                             .foregroundStyle(dataItem.color)
                         }
-                        
                     }
                     .chartXAxis {
                         AxisMarks(position: .bottom, values: .stride(by: .day)) { _ in
@@ -55,14 +54,12 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, maxHeight: 300) //TODO: FIX
                 }
                 HStack(alignment: .center, content: {
-                    /*@START_MENU_TOKEN@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
                     
                 })
             }
         }
     }
 }
-
 #Preview {
     ContentView()
 }

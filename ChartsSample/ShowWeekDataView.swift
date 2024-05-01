@@ -18,7 +18,6 @@ struct ShowWeekDataView: View {
                     .foregroundColor(.gray)  // 線の色をグレーに設定
                 Text("category")
             })
-            
                 .frame(width: 100, height: 100)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)  // 角の丸い枠線
@@ -30,12 +29,12 @@ struct ShowWeekDataView: View {
                 ForEach(0..<7, id: \.self) { _ in
                     VStack {
                         Text("日")
-                            .font(.system(size: 12))
+                            .font(.system(size: 14))
                         Rectangle()
                             .frame(height: 1)
                             .foregroundColor(.gray)
                         Text("10分")
-                            .font(.system(size: 10))
+                            .font(.system(size: 14))
                     }
                     .padding(8)
                     .background(Color(UIColor.tertiarySystemGroupedBackground))

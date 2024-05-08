@@ -11,19 +11,6 @@ import SwiftUI
 struct ShowWeekDataView: View {
     var body: some View {
         LazyVGrid(columns: [GridItem(.fixed(300))], alignment: .leading, content: {
-//            VStack(content: {
-//                Text("color")
-//                Rectangle()
-//                    .frame(height: 1)  // 線の厚さを1に設定
-//                    .foregroundColor(.gray)  // 線の色をグレーに設定
-//                Text("category")
-//            })
-//                .frame(width: 100, height: 100)
-//                .overlay(
-//                    RoundedRectangle(cornerRadius: 10)  // 角の丸い枠線
-//                        .stroke(Color.blue, lineWidth: 2)
-//                )
-            
             TagView(color: Color.green, title: "Swift")
             // データ受け取れるようにする
             

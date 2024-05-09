@@ -14,10 +14,13 @@ struct TagView: View {
     var body: some View {
         Text(title)
             .font(.caption)
-            .foregroundColor(.white)
+            .foregroundColor(color)
             .padding(.horizontal, 10)
             .padding(.vertical, 5)
-            .background(color)
-            .cornerRadius(10)
+            .background(.white)
+            .overlay(
+                RoundedRectangle(cornerRadius: 30)  // 枠線を角丸矩形で定義
+                    .stroke(color, lineWidth: 1)  // 枠線の色と太さを設定
+            )
     }
 }

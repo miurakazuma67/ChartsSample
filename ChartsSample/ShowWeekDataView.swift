@@ -9,9 +9,14 @@ import SwiftUI
 
 // カテゴリ押下したらセルごと色変わってテキストも白くする
 struct ShowWeekDataView: View {
+    // タグのタイトルと色
+    var tagTitle: String
+    var tagColor: Color
+    
     var body: some View {
+        
         LazyVGrid(columns: [GridItem(.fixed(300))], alignment: .leading, content: {
-            TagView(color: Color.green, title: "Swift")
+            TagView(color: tagColor, title: tagTitle)
             // データ受け取れるようにする
             
 // ------------------- 曜日＋学習時間 S-------------------------------------
@@ -36,6 +41,6 @@ struct ShowWeekDataView: View {
     }
 }
 
-#Preview {
-    ShowWeekDataView()
-}
+//#Preview {
+//    ShowWeekDataView()
+//}

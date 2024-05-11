@@ -57,29 +57,7 @@ struct ContentView: View {
                 // categoryの個数分だけ、タグと一週間分のビューを作る
                 LazyVGrid(columns: [GridItem(.fixed(300))], alignment: .leading, content: {
                     ForEach(viewModel.studyData, id: \.category) { dataItem in
-                        VStack {
-                            Text(dataItem.category)
-                                .font(.headline)
-                                .padding(.bottom, 10)
-                            
-                            // 一週間分のビュー
-                            LazyVGrid(columns: [GridItem(.flexible())], spacing: 0) {
-                                ForEach(0..<7, id: \.self) { index in
-                                    VStack {
-                                        Text("日")
-                                            .font(.system(size: 12))
-                                        Rectangle()
-                                            .frame(height: 1)
-                                            .foregroundColor(.gray)
-                                        Text("10分")
-                                            .font(.system(size: 12))
-                                    }
-                                    .padding(8)
-                                    .background(Color(UIColor.tertiarySystemGroupedBackground))
-                                }
-                            }
-                            .padding(.horizontal, 10)
-                        }
+                        ShowWeekDataView(tagTitle: dataItem.category, tagColor: dataItem.color)
                     }
                 })
             }

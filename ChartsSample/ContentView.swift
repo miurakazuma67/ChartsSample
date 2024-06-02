@@ -15,52 +15,55 @@ struct ContentView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                Text("学習記録")
-//                    .centerHorizontally()
-                Picker("Options", selection: $selectedTab) {
-                    Text("日").tag(0)
-//                    Text("週").tag(1)
-//                    Text("月").tag(2)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .frame(width: geometry.size.width, height: 32, alignment: .center)
-                .padding()
+            ScrollView {
+                VStack {
+                    Text("学習記録")
+    //                    .centerHorizontally()
+                    Picker("Options", selection: $selectedTab) {
+                        Text("日").tag(0)
+    //                    Text("週").tag(1)
+    //                    Text("月").tag(2)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .frame(width: geometry.size.width, height: 32, alignment: .center)
+                    .padding()
 
-                // 選択されたタブに応じたコンテンツを表示
-                if selectedTab == 0 {
-                    Chart {
-                        ForEach(viewModel.studyData) { dataItem in
-                            BarMark(
-                                x: .value("日付", dataItem.date, unit: .day),
-                                y: .value("勉強時間", dataItem.studyTime),
-                                width: 20 // 棒グラフの幅
-                            )
-                            .foregroundStyle(dataItem.color)
+                    // 選択されたタブに応じたコンテンツを表示
+                    if selectedTab == 0 {
+                        Chart {
+                            ForEach(viewModel.studyData) { dataItem in
+                                BarMark(
+                                    x: .value("日付", dataItem.date, unit: .day),
+                                    y: .value("勉強時間", dataItem.studyTime),
+                                    width: 20 // 棒グラフの幅
+                                )
+                                .foregroundStyle(dataItem.color)
+                            }
                         }
-                    }
-                    .chartXAxis {
-                        AxisMarks(position: .bottom, values: .stride(by: .day)) { _ in
-                            AxisGridLine(centered: nil, stroke: .init(StrokeStyle(lineWidth: 0)))
-                            AxisValueLabel(format: .dateTime.weekday(.abbreviated))
+                        .chartXAxis {
+                            AxisMarks(position: .bottom, values: .stride(by: .day)) { _ in
+                                AxisGridLine(centered: nil, stroke: .init(StrokeStyle(lineWidth: 0)))
+                                AxisValueLabel(format: .dateTime.weekday(.abbreviated))
+                            }
                         }
-                    }
-                    .chartYAxis {
-                        AxisMarks(values: .automatic(desiredCount: 5)) { _ in
-                            AxisGridLine()
-                            AxisValueLabel()
+                        .chartYAxis {
+                            AxisMarks(values: .automatic(desiredCount: 5)) { _ in
+                                AxisGridLine()
+                                AxisValueLabel()
+                            }
                         }
+                        .frame(maxWidth: .infinity, maxHeight: 300) //TODO: FIX
                     }
-                    .frame(maxWidth: .infinity, maxHeight: 300) //TODO: FIX
-                }
-                
-                // categoryの個数分だけ、タグと一週間分のビューを作る
-                LazyVGrid(columns: [GridItem(.fixed(300))], alignment: .leading, content: {
-                    ForEach(viewModel.studyData, id: \.category) { dataItem in
-                        ShowWeekDataView(tagTitle: dataItem.category, tagColor: dataItem.color)
-                    }
-                })
+                    
+                    // categoryの個数分だけ、タグと一週間分のビューを作る
+                    LazyVGrid(columns: [GridItem(.fixed(300))], alignment: .leading, content: {
+                        ForEach(viewModel.studyData, id: \.category) { dataItem in
+                            ShowWeekDataView(tagTitle: dataItem.category, tagColor: dataItem.color)
+                        }
+                    })
+                } // vstack
             }
+            
         }
     }
 }

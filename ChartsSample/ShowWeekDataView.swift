@@ -12,6 +12,8 @@ struct ShowWeekDataView: View {
     // タグのタイトルと色
     var tagTitle: String
     var tagColor: Color
+    // 曜日とタグの色も渡せるように
+    // 配列で1週間分の学習データをもらってくると良さそう
     
     var body: some View {
         

@@ -36,6 +36,7 @@ struct ShowWeekDataView: View {
                     }
                     .padding(8)
                     .background(Color(UIColor.tertiarySystemGroupedBackground))
+                    .frame(maxWidth: .infinity, alignment: .leading) // 左寄せでも見切れないように調整
                 }
             }
 // ------------------- 曜日＋学習時間 E-------------------------------------

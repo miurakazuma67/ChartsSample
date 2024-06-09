@@ -18,11 +18,9 @@ struct ContentView: View {
             ScrollView {
                 VStack {
                     Text("学習記録")
-    //                    .centerHorizontally()
+//                        .centerHorizontally()
                     Picker("Options", selection: $selectedTab) {
                         Text("日").tag(0)
-    //                    Text("週").tag(1)
-    //                    Text("月").tag(2)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: geometry.size.width, height: 32, alignment: .center)

@@ -13,7 +13,8 @@ final class ColorManager {
     
     // for: 引数ラベル
     // ex) let categoryColor = colorManager.color(for: "数学")
-    //この文脈では、for: ラベルが color(for category: String) メソッドの呼び出しを読みやすくしています。これにより、「"数学"カテゴリーのための色を取得する」という操作が明確に伝わります。
+    // この文脈では、for: ラベルが color(for category: String) メソッドの呼び出しを読みやすくしています。
+    // これにより、「"数学"カテゴリーのための色を取得する」という操作が明確に伝わります。
     func createColor(for category: String) -> Color {
         if let color = colorDictionary[category] {
             return color
